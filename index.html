@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ramadan Checklist 2026</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+            font-style: italic;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        th, td {
+            border: 1px solid #2D5A27;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #eaf5ea;
+            height: 35px;
+        }
+
+        .deed-name {
+            text-align: left;
+            padding: 5px;
+            min-width: 300px;
+            font-weight: bold;
+        }
+
+        .checkbox-cell {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .checkbox-cell:hover {
+            background-color: #d9f2d9;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Ramadan Checklist 2026</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Ramadan Deeds Checklist</th>
+            <!-- Day Numbers -->
+            <script>
+                for (let i = 1; i <= 30; i++) {
+                    document.write("<th>" + i + "</th>");
+                }
+            </script>
+        </tr>
+    </thead>
+
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+const deeds = [
+"I have performed the Fajr prayer.",
+"I have performed the morning Masnun Duas and Dhikr.",
+"I have performed all prayers on time.",
+"I have performed the five daily prayers at the mosque.",
+"I have performed the Sunnah prayers for every Waqt (time).",
+"I have performed Masnun Dhikr after every Fard (obligatory) prayer.",
+"I have recited the Quran.",
+"I have spent at least half an hour gaining Islamic knowledge.",
+"I have prayed for my parents and family.",
+"I have conducted Islamic teaching (Talim) with my family.",
+"I have prayed for distressed Muslim brothers and sisters.",
+"I have given charity (Sadaqah).",
+"I have refrained from backbiting and lying.",
+"I have sent blessings (Durood) upon the Prophet ﷺ.",
+"I have given Dawah/advice to people.",
+"I have made Dua during the times when prayers are accepted.",
+"I have performed the Tahajjud prayer.",
+"I have performed the Taraweeh prayer.",
+"I have recited Surah Al-Mulk before sleeping.",
+"I have reflected on life after death (Akhirah).",
+"I have read the Quran with translation/meaning.",
+"I have performed Repentance (Tawbah) and Istighfar.",
+"I have avoided useless talk and deeds.",
+"I have recited Surah Al-Kahf on Friday (Jummah)."
+];
+
+const tableBody = document.getElementById("tableBody");
+
+deeds.forEach(deed => {
+    let row = document.createElement("tr");
+
+    let deedCell = document.createElement("td");
+    deedCell.className = "deed-name";
+    deedCell.textContent = deed;
+    row.appendChild(deedCell);
+
+    for (let i = 1; i <= 30; i++) {
+        let cell = document.createElement("td");
+        cell.className = "checkbox-cell";
+        cell.onclick = function () {
+            this.textContent = this.textContent === "✓" ? "" : "✓";
+        };
+        row.appendChild(cell);
+    }
+
+    tableBody.appendChild(row);
+});
+</script>
+
+</body>
+</html>
